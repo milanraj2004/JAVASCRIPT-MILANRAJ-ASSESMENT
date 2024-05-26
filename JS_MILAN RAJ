@@ -1,0 +1,76 @@
+/* 
+// Metacrafters - Beginning Javascript
+//
+// This is a javascript playground for testing your javascript code!
+// When you are ready to test, simply right click and select "Run Code"
+// to see the result print below. If you have more then one snippet of code,
+// you can highlight the code you want to test, and then right click and select "Run Code"
+*/
+
+// Enter your code below this line
+
+// Code example
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const NFTsmr = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+//_name is used for styling for the parameters passing in the function and the the diffrentaite between them which one is paremeter or e
+function mintNFT (_name,_eyecolors,_shirtTypes,_blings) {
+    const NFTr={
+        "name":_name,
+        "eyecolors":_eyecolors,
+        "shirtTypes":_shirtTypes,
+        "blings":_blings,
+    }
+    //currently in our builtin arrays i.e. empty arrays now push data in arrays 
+    NFTsmr.push(NFTr);
+    console.log("Milan Raj:" + _name);
+
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    //Here we come to console data into metadata using for loop for the data
+    for(let i=0; i<NFTsmr.length;i++){
+         //here whenever we use the data of arrays index i and print those many data stored into index
+         console.log("\nID:-\t\t" + (i+1));
+        console.log("Name:-\t\t\t\t" + NFTsmr[i].name);
+        console.log("EyeColors:-\t\t" + NFTsmr[i].eyecolors);
+        console.log("Shirtypes:-\t\t" + NFTsmr[i].shirtTypes);
+        console.log("Blings:-\t\t\t" + NFTsmr[i].blings);
+        
+        
+       
+ 
+    } 
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\n length:-\t\t\t" + NFTsmr.length);
+
+}
+
+// call your functions below this line
+mintNFT("Kanishk Verma ","Brown","Blazer","Golden Pendant");
+mintNFT("Himanshu ","Black","Hoodie","Golden Pendant");
+mintNFT("Prateek  ","Blue","DenimShirt","Golden Pendant");
+mintNFT("Swayam ","Brownishblack","Jacket","Golden Pendant");
+listNFTs();
+getTotalSupply();
+
